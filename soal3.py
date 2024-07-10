@@ -1,28 +1,19 @@
-class Queue:
-    def __init__(self):
-        self.items = []
-    
-    def is_empty(self):
-        return len(self.items) == 0
-    
-    def enqueue(self, item):
-        self.items.append(item)
-        print(f"Pesanan '{item}' anda suda ditambahkan ke dalam antrian.")
-    
-    def dequeue(self):
-        if self.is_empty():
-            print("Antrian kosong, tidak ada pesanan yang bisa dihapus.")
-            return None
-        return self.items.pop(0)
-    
-    def size(self):
-        return len(self.items)
-    
-    def display(self):
-        if self.is_empty():
-            print("Antrian kosong.")
-        else:
-            print("Antrian pesanan saat ini:")
-            for i, item in enumerate(self.items):
-                print(f"{i + 1}. {item}")
+class warmindoer:
+    def _init_(self):
+        self.queue = []
 
+    def enqueue(self, order):
+        self.queue.append(order)
+        print(f"Order '{order}' added to the queue.")
+
+    def dequeue(self):
+        if not self.queue:
+            print("No orders in the queue.")
+        else:
+            order = self.queue.pop(0)
+            print(f"Order -{order}- melayani.")
+
+    def display_queue(self):
+        print("Current queue:")
+        for i, order in enumerate(self.queue, start=1):
+            print(f"{i}. {order}")
